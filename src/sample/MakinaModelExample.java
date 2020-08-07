@@ -1,48 +1,34 @@
 package sample;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.Date;
 
 public class MakinaModelExample {
-    private final String ownerName;
-    private  final String marka;
-    private final String lloji;
-    private final String tipi;
-    private final String targa;
-    private final String ngjyre;
+    private final SimpleStringProperty ownerName;
+    private  final SimpleStringProperty marka;
+    private final SimpleStringProperty lloji;
 
 
 
-    public MakinaModelExample(String ownerName1, String marka, String lloji, String tipi, String targa,  String ngjyre) {
-        this.ownerName = ownerName1;
-        this.marka = marka;
-        this.lloji = lloji;
-        this.tipi = tipi;
-        this.targa = targa;
-        this.ngjyre = ngjyre;
-    }
-
-    public String getTarga() {
-        return targa;
-    }
-
-    public String getTipi() {
-        return tipi;
+    public MakinaModelExample(String ownerName1, String marka, String lloji) {
+        this.ownerName = new SimpleStringProperty (ownerName1);
+        this.marka = new SimpleStringProperty(marka);
+        this.lloji = new SimpleStringProperty(lloji);
     }
 
     public String getLloji() {
-        return lloji;
+        return lloji.get();
     }
 
     public String getMarka() {
-        return marka;
+        return marka.get();
     }
 
     public String getOwnerName() {
-        return ownerName;
+        return ownerName.get();
     }
 
-    public String getNgjyre() {
-        return ngjyre;
-    }
+
 }
 
